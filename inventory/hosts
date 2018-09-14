@@ -3,8 +3,22 @@ switch1
 switch2
 switch3
 
+[switches:vars]
+ansible_become_pass="{{ vault_access_secret }}"
+
+[distros]
+distro1
+distro2
+
+[distros:vars]
+ansible_become_pass="{{ vault_distro_secret }}"
+
 [ios:children]
 switches
+distros
 
 [ios:vars]
 os=ios
+
+[vault_creds:children]
+ios

@@ -9,5 +9,6 @@ ansible_become: yes
 ansible_become_method: enable
 
 # Uncomment one of the below if you use different secret passwords based on device roles
-ansible_become_pass: "{{ vault_access_secret }}"
+# AND you do not define these variables in you inventory
+#ansible_become_pass: "{{ vault_access_secret }}"
 #ansible_become_pass: "{{ vault_distro_secret }}"
