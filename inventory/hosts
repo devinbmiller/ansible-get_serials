@@ -1,7 +1,7 @@
 [switches]
-switch1
-switch2
-switch3
+switch1 ansible_host=1.1.1.1
+switch2 ansible_host=2.2.2.2
+switch3		# add entries and ip's as needed
 
 [switches:vars]
 ansible_become_pass="{{ vault_access_secret }}"
