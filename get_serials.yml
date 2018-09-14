@@ -12,9 +12,9 @@
         - hardware
     register: facts_results
 
-  - name: Display contentes of ios_facts variable
-    debug:
-      var: facts_results
+#  - name: Display contentes of ios_facts variable
+#    debug:
+#      var: facts_results
 
   - name: Output Results to File
     template:
