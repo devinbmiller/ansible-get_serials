@@ -16,9 +16,9 @@ Ansible will generate a text file named `<hostname>-inventory.txt` for each quer
 ### Usage
 1. Create Ansible Vault file named `vault_creds.yml` for connection credentials variables or generate vault strings and place in `group_vars/all.yml`
  * **Required Vault Variables**
-  * vault_username
-  * vault_password
-  * vault_access_secret
-  * vault_distro_secret
+   * vault_username
+   * vault_password
+   * vault_access_secret
+   * vault_distro_secret
 2. Edit or create an inventory to run the play against.
   - A sample inventory with required groups is located in `inventory/hosts`
