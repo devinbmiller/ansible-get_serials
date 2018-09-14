@@ -4,6 +4,7 @@ This project will query an arbitrary number of Cisco IOS devices, get their host
 
 Ansible will generate a text file named `<hostname>-inventory.txt` for each queried hostname in the `configs` directory.
  
+Optionally, use the `merge-files.py` script to merge all individiual output files in `configs/` to a single merged file in named `merged-files.txt`
 
 ## Getting started
 
@@ -15,10 +16,17 @@ Ansible will generate a text file named `<hostname>-inventory.txt` for each quer
     * Clone the project with `git clone https://github.com/devinbmiller/ansible-get_serials.git`
 ### Usage
 1. Create Ansible Vault file named `vault_creds.yml` for connection credentials variables or generate vault strings and place in `group_vars/all.yml`
- * **Required Vault Variables**
+ * **Required Vault Variables**:
    * vault_username
    * vault_password
    * vault_access_secret
    * vault_distro_secret
-2. Edit or create an inventory to run the play against.
+2. Edit or create an inventory to run the play against:
   - A sample inventory with required groups is located in `inventory/hosts`
+3. Edit `get_serials.yml` file:
+  - confirm that the inventory group next to the `hosts:` key is correct for the inventory you want the play to run against
+4. Run the Ansible playbook:
+  - `ansible-playbook --ask-vault-pass -i inventory/<inventory_file> get_serials.yml`
+  - text files will be generated for each host in the `configs/` directory
+5. **Optional**
+  - Merge the individual files in `configs` to a single file named `merged-files.txt` by running `python merge-files.txt`
