@@ -1,0 +1,3 @@
+configs/*.txt
+inventory/J-West
+group_vars/vault_creds.yml

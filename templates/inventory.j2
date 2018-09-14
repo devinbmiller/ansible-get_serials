@@ -1,0 +1,7 @@
+{{ansible_facts.net_hostname}}
+ - {{ansible_facts.net_model}}
+
+Serial Numbers:
+{% for serial in ansible_net_stacked_serialnums %}
+{{serial}}
+{% endfor %}

@@ -1,0 +1,22 @@
+---
+- name: Query Devices and Get Model/Serial Numbers 
+  hosts: switches
+  connection: local
+  gather_facts: no
+
+  tasks:
+
+  - name: Gather Cisco IOS Hardware Facts
+    ios_facts:
+      gather_subset:
+        - hardware
+    register: facts_results
+
+  - name: Display contentes of ios_facts variable
+    debug:
+      var: facts_results
+
+  - name: Output Results to File
+    template:
+      src: "templates/inventory.j2"
+      dest: "configs/{{ ansible_facts.net_hostname }}-inventory.txt"

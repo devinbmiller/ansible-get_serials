@@ -1,0 +1,10 @@
+[switches]
+switch1
+switch2
+switch3
+
+[ios:children]
+switches
+
+[ios:vars]
+os=ios

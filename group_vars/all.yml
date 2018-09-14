@@ -1,0 +1,10 @@
+---
+# This will provide the variables/values below to all hosts
+
+ansible_connection: network_cli
+ansible_network_os: "{{ os }}"
+ansible_user: "{{ vault_username }}"
+ansible_ssh_pass: "{{ vault_password }}"
+ansible_become: yes
+ansible_become_method: enable
+ansible_become_pass: "{{ vault_access_secret }}"
