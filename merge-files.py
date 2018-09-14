@@ -29,6 +29,8 @@ def merge_files(files, folder='configs/', output='merged-files.txt'):
             with open(output, 'a') as dest_file:
                 dest_file.write(contents)
                 dest_file.write('\n')
+    
+    print('\n\nAll files merged to: ' + folder + output + '\n\n')
 
 def main():
     ''' This is the main program function '''
