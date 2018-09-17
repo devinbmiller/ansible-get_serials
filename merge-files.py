@@ -2,10 +2,10 @@
 # This program will take all the text files in a default directory
 # read their contents, and write them to a default text file
 
-import os
+import os, sys
 
 
-def merge_files(folder="configs/J-West", output="configs/merged-files.txt"):
+def merge_files(folder="configs/", output="configs/merged-files.txt"):
     """ This will read the contents of each file in the list of file names
         and append their contents to a default file name
         Param1: List of file names
@@ -25,11 +25,13 @@ def merge_files(folder="configs/J-West", output="configs/merged-files.txt"):
     print("\n\nAll files merged to: " + os.path.join(folder, output) + "\n\n")
 
 
-def main():
-    """ This is the main program function """
+def main(cmd_ln_args):
+    """ This is the main program function
+        Param1: sys.argv list
+    """ 
 
-    merge_files()
+    merge_files(cmd_ln_args[1])
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv)
