@@ -3,7 +3,7 @@
   hosts: ios
   connection: local
   gather_facts: no
-
+  
   tasks:
 
   - name: Gather Cisco IOS Hardware Facts
@@ -14,9 +14,15 @@
 
 #  - name: Display contentes of ios_facts variable
 #    debug:
-#      var: facts_results
+#      var: vars
+
+  - name: Create Output Directory
+    file:
+     path: "{{ dest_dir }}"
+     recurse: yes
+     state: directory
 
   - name: Output Results to File
     template:
       src: "templates/inventory.j2"
-      dest: "configs/{{ ansible_facts.net_hostname }}-inventory.txt"
+      dest: "{{ dest_dir }}/{{ ansible_facts.net_hostname }}-inventory.txt"

@@ -1,3 +1,6 @@
+[all:vars]
+dest_dir="add output dest dir here"		# Recursibly created folder for text file output from playbook
+
 [switches]
 switch1 ansible_host=1.1.1.1
 switch2 ansible_host=2.2.2.2
