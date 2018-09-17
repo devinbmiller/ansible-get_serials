@@ -35,8 +35,10 @@ def main(cmd_ln_args):
     """ This is the main program function
         Param1: sys.argv list
     """
-    output_file = cmd_ln_args[1] + "-merged.txt"
-    merge_files(cmd_ln_args[1], output_file)
+    src_folder = cmd_ln_args[1]  # where to look for the files, arg from cmd line
+    output_file = src_folder + "-merged.txt"  # what output file will be named
+
+    merge_files(src_folder, output_file)
 
 
 if __name__ == "__main__":
