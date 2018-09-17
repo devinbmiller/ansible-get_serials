@@ -4,39 +4,33 @@
 
 import os
 
-def get_file_names(folder='configs/'):
-    ''' Will list all the files in a directory and return list of file names
-        Param1: folder to get file names from
-        Returns: list of file names
-    '''    
-    
-    contents = os.listdir(folder)
-    return contents
 
-def merge_files(files, folder='configs/', output='merged-files.txt'):
-    ''' This will read the contents of each file in the list of file names
-        and append their contentsvto a default file name
+def merge_files(folder="configs/J-West", output="merged-files.txt"):
+    """ This will read the contents of each file in the list of file names
+        and append their contents to a default file name
         Param1: List of file names
         Param2: Folder where the files are located
         Param3: Name of file with merged contents
-    '''
-    os.chdir(folder)
+    """
+    # os.chdir(folder)
+    files = os.listdir(folder)
 
     for file in files:
-        with open(file, 'r') as source_file:
+        with open(os.path.join(folder, file), "r") as source_file:
             contents = source_file.read()
 
-            with open(output, 'a') as dest_file:
+            with open(output, "a") as dest_file:
                 dest_file.write(contents)
-                dest_file.write('\n')
-    
-    print('\n\nAll files merged to: ' + folder + output + '\n\n')
+                dest_file.write("\n")
+
+    print("\n\nAll files merged to: " + os.path.join(folder, output) + "\n\n")
+
 
 def main():
-    ''' This is the main program function '''
-    
-    files = get_file_names()
-    merge_files(files)
+    """ This is the main program function """
 
-if __name__ == '__main__':
+    merge_files()
+
+
+if __name__ == "__main__":
     main()
