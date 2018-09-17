@@ -5,14 +5,13 @@
 import os
 
 
-def merge_files(folder="configs/J-West", output="merged-files.txt"):
+def merge_files(folder="configs/J-West", output="configs/merged-files.txt"):
     """ This will read the contents of each file in the list of file names
         and append their contents to a default file name
         Param1: List of file names
         Param2: Folder where the files are located
         Param3: Name of file with merged contents
     """
-    # os.chdir(folder)
     files = os.listdir(folder)
 
     for file in files:
