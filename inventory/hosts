@@ -8,6 +8,7 @@ switch3		# add entries and ip's as needed
 
 [switches:vars]
 ansible_become_pass="{{ vault_access_secret }}"
+device_type="access_switch"
 
 [distros]
 distro1
@@ -15,6 +16,7 @@ distro2
 
 [distros:vars]
 ansible_become_pass="{{ vault_distro_secret }}"
+device_type="distro_switch"
 
 [ios:children]
 switches

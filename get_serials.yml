@@ -14,7 +14,7 @@
 
 #  - name: Display contentes of ios_facts variable
 #    debug:
-#      var: vars
+#      var: facts_results
 
   - name: Create Output Directory
     file:
