@@ -21,8 +21,9 @@ Optionally, use the `merge-files.py` script to merge all individiual output file
    * vault_password
    * vault_access_secret
    * vault_distro_secret
-2. Edit or create an inventory to run the play against:
+2. Edit or create a host inventory file to run the play against:
   - A sample inventory with required groups is located in `inventory/hosts`
+  - REQUIRED: Make sure you define a variable for your hosts/groups named `dest_dir`.  This directory will be created and text files will be placed here
 3. Edit `get_serials.yml` file:
   - confirm that the inventory group next to the `hosts:` key is correct for the inventory you want the play to run against
 4. Run the Ansible playbook:
