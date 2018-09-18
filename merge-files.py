@@ -4,18 +4,20 @@
 
 import os, sys
 
+
 def usage():
     """ Gives the user a usage message if they do noy type enough
         command line arguments
     """
     print(
-    '''
+        """
     USAGE:
     python merge-files.py <directory>
 
     directory: location of files you would like to merge
-    '''
+    """
     )
+
 
 def get_file(folder):
     """ This is a generator function that will return one file name 
@@ -23,8 +25,18 @@ def get_file(folder):
         Param1: string of folder to get files from
         Yields: String file name
     """
-    for file in os.listdir(folder):
-        yield file
+    files = [
+        file
+        for file in os.listdir(folder)
+        if os.path.isfile(os.path.join(folder, file))
+    ]
+
+    if files:
+        for file in files:
+            yield file
+    else:
+        print("No file(s) found in: " + folder)
+        sys.exit(0)
 
 
 def open_file(folder):
