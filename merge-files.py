@@ -4,6 +4,18 @@
 
 import os, sys
 
+def usage():
+    """ Gives the user a usage message if they do noy type enough
+        command line arguments
+    """
+    print(
+    '''
+    USAGE:
+    python merge-files.py <directory>
+
+    directory: location of files you would like to merge
+    '''
+    )
 
 def get_file(folder):
     """ This is a generator function that will return one file name 
@@ -45,10 +57,13 @@ def main(cmd_ln_args):
     """ This is the main program function
         Param1: sys.argv list
     """
-    src_folder = cmd_ln_args[1]  # where to look for the files, arg from cmd line
-    output_file = src_folder + "-merged.txt"  # what output file will be named
+    if len(cmd_ln_args) <= 1:
+        usage()
+    else:
+        src_folder = cmd_ln_args[1]  # where to look for the files, arg from cmd line
+        output_file = src_folder + "-merged.txt"  # what output file will be named
 
-    merge_files(src_folder, output_file)
+        merge_files(src_folder, output_file)
 
 
 if __name__ == "__main__":
