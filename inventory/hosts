@@ -18,6 +18,3 @@ device_type="distro_switch"
 [ios:children]
 switches
 distros
-
-[ios:vars]
-os=ios
