@@ -1,4 +1,5 @@
 configs/
 inventory/J-West
 inventory/WASC
+inventory/M-X
 group_vars/vault_creds.yml
