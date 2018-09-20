@@ -1,0 +1,3 @@
+---
+ansible_become_pass: "{{ vault_access_secret }}"
+device_type: access_switch
