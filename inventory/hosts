@@ -24,6 +24,3 @@ distros
 
 [ios:vars]
 os=ios
-
-[vault_creds:children]
-ios
