@@ -3,4 +3,4 @@ inventory/J-West
 inventory/WASC
 inventory/M-X
 inventory/Test
-group_vars/vault_creds.yml
+group_vars/all/vault.yml
