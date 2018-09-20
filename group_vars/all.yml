@@ -12,3 +12,6 @@ ansible_become_method: enable
 # AND you do not define these variables in you inventory
 #ansible_become_pass: "{{ vault_access_secret }}"
 #ansible_become_pass: "{{ vault_distro_secret }}"
+
+# This is where the individual host inventories will go
+dest_dir: "configs/inventories"
