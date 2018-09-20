@@ -1,20 +1,12 @@
-[switches]
+[access-switches]
 switch1 ansible_host=1.1.1.1
 switch2 ansible_host=2.2.2.2
 switch3		# add entries and ip's as needed
 
-[switches:vars]
-ansible_become_pass="{{ vault_access_secret }}"
-device_type="access_switch"
-
-[distros]
+[distro-switches]
 distro1
 distro2
 
-[distros:vars]
-ansible_become_pass="{{ vault_distro_secret }}"
-device_type="distro_switch"
-
 [ios:children]
-switches
-distros
+access-switches
+distro-switches
