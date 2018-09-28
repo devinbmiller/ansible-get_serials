@@ -12,10 +12,6 @@
         - hardware
     register: facts_results
 
-#  - name: Display contentes of ios_facts variable
-#    debug:
-#      var: facts_results
-
   - name: Create Output Directory
     file:
      path: "{{ dest_dir }}"
@@ -26,3 +22,7 @@
     template:
       src: "templates/inventory.j2"
       dest: "{{ dest_dir }}/{{ ansible_facts.net_hostname }}-inventory.txt"
+
+#  - name: Display contentes of ios_facts variable
+#    debug:
+#      var: facts_results
