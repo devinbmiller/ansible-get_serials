@@ -1,7 +1,8 @@
-{{ansible_facts.net_hostname}} MODEL: {{ansible_facts.net_model}}
+Hostname: {{ansible_net_hostname}}
+MODEL: {{ansible_net_model}}
 
-SERIAL NUMBERS:
-{% if device_type == "access_switch" %}
+SERIAL NUMBER(S):
+{% if ansible_net_stacked_serialnums is defined %}
 {% for serial in ansible_net_stacked_serialnums %}
 {{serial}}
 {% endfor %}

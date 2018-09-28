@@ -1,3 +1,2 @@
 ---
 ansible_become_pass: "{{ vault_distro_secret }}"
-device_type: distro_switch
